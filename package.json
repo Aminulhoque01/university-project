@@ -6,18 +6,16 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "lint:fix": "eslint . --fix",
-    "prettier:check": "npm prettier --write .",
+    "lint:fix": "eslint --fix",
+    "prettier:check": "npm run prettier --write .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "prettier:fix": "prettier --write .",
-    "lint-prettier": "npx lint:check && npx prettier:check",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install~"
+    "lint-prettier": "npm run lint:check && npm run prettier:check",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "aminul haque",
   "license": "ISC",
   "lint-staged": {
-    "src/**/*.ts": "npx lint-prettier"
+    "src/**/*.ts": "npm run prettier:check"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
