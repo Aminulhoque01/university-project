@@ -1,6 +1,4 @@
-
-
-export type IUser ={
+export type IUser = {
   id: string
   role: string
   password: string
